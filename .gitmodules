@@ -1,0 +1,21 @@
+[submodule "update-clock"]
+	path = update-clock
+	url = https://github.com/CarmeloMaitaO/update-clock.git
+[submodule "streams"]
+	path = streams
+	url = https://github.com/CarmeloMaitaO/streams.git
+[submodule "screenshot"]
+	path = screenshot
+	url = https://github.com/CarmeloMaitaO/screenshot.git
+[submodule "pomodoro"]
+	path = pomodoro
+	url = https://github.com/CarmeloMaitaO/pomodoro.git
+[submodule "setbg"]
+	path = setbg
+	url = https://github.com/CarmeloMaitaO/setbg.git
+[submodule "volume"]
+	path = volume
+	url = https://github.com/CarmeloMaitaO/volume.git
+[submodule "record"]
+	path = record
+	url = https://github.com/CarmeloMaitaO/record.git
