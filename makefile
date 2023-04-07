@@ -1,10 +1,18 @@
-source-dirs:=$(wildcard */.)
+dir=`pwd`
 
-install: $(source-dirs)
-$(source-dirs):
-	$(MAKE) -C `pwd`/$@
+install: update-s6
 
-update:
-	git submodule update --remote
+install-root: dwl-startup
 
-.PHONY: install $(source-dirs)
+check-folder:
+	mkdir -p $(HOME)/.local/bin
+
+dwl-startup:
+	chmod +x $(dir)/dwl-startup
+	ln -sf $(dir)/dwl-startup /usr/bin/dwl-startup
+
+update-s6: check-folder
+	chmod +x $(dir)/update-s6
+	ln -sf $(dir)/update-s6 $(HOME)/.local/bin
+
+.PHONY: install dwl-startup update-s6 check-folder
