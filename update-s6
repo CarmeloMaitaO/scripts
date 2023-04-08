@@ -22,9 +22,9 @@ s6-rc-update -l "/run/${USER}/s6-rc" "${DBPATH}"-"${TIMESTAMP}"
 fi
 
 if [ -d "${DBPATH}" ]; then
-ln -sfn "${DBPATH}"-"${TIMESTAMP}" "${DBPATH}"/compiled && mv -f "${DBPATH}"/compiled "${RCPATH}"
+ln -sf "${DBPATH}"-"${TIMESTAMP}" "${DBPATH}"/compiled && mv -f "${DBPATH}"/compiled "${RCPATH}"
 else
-ln -sfn "${DBPATH}"-"${TIMESTAMP}" "${DBPATH}"
+ln -sf "${DBPATH}"-"${TIMESTAMP}" "${DBPATH}"
 fi
 
 echo "==> Switched to a new database for ${USER}."

@@ -1,0 +1,20 @@
+#!/bin/execlineb -P
+
+define USER "chiguire"
+define tempdir "/tmp/${USER}/service"
+foreground {
+	mkdir -p ${tempdir}
+}
+background {
+	s6-svscan ${tempdir}
+}
+foreground {
+	s6-rc-init \
+		-c /home/${USER}/.local/share/s6/rc/compiled \
+		-l /tmp/${USER}/s6-rc /tmp/${USER}/service
+} 
+foreground {
+	s6-rc \
+		-l /tmp/${USER}/s6-rc \
+		-up change default <&-
+}
