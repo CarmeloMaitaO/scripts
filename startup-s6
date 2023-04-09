@@ -16,5 +16,5 @@ foreground {
 foreground {
 	s6-rc \
 		-l /tmp/${USER}/s6-rc \
-		-up change default <&-
+		-up change default
 }
